@@ -1,0 +1,11 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+blackphp_home:
+    path:      /
+    defaults: { _controller: AppBundle:Black:index }
+
+blackphp_view:
+    path:      /blackphp/episode/{id}
+    defaults: { _controller: AppBundle:Black:views }

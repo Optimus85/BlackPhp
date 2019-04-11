@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block blackphp_home %}
+
+
+    <h2>Episode: {{ episode.id }} {{ episode.name }} </h2>
+
+    <ul>
+        <img src="{{ episode.image.medium }}" alt="" />
+            <li>
+                    {{ episode.summary|raw }}
+            </li>
+
+    </ul>
+    <a href="{{ path('blackphp_home') }}">Home</a>
+
+{% endblock %}

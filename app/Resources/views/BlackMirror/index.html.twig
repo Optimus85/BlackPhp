@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block blackphp_home %}
+
+    <img src="{{ serie.image.medium }}" alt="" />
+    <h2>{{ serie.name }}</h2>
+    {{ serie.summary|raw }}
+
+    <h2>Liste des Episodes</h2>
+
+    <ul>
+        {% for episode in listEpisodes %}
+            <li>
+                <a href="{{ path('blackphp_view', {'id': episode.id}) }}">
+                    {{ episode.name }}
+                </a>
+            </li>
+        {% else %}
+            <li>Pas d'episodes</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
